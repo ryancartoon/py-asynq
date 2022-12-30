@@ -45,11 +45,11 @@ func main() {
 	// //            Options include MaxRetry, Queue, Timeout, Deadline, Unique etc.
 	// // ----------------------------------------------------------------------------
 
-	// task, err = tasks.NewImageResizeTask("https://example.com/myassets/image.jpg")
+	// task, err := tasks.NewImageResizeTask("https://example.com/myassets/image.jpg")
 	// if err != nil {
 	// 	log.Fatalf("could not create task: %v", err)
 	// }
-	// info, err = client.Enqueue(task, asynq.MaxRetry(10), asynq.Timeout(3*time.Minute))
+	// info, err := client.Enqueue(task, asynq.MaxRetry(10), asynq.Timeout(3*time.Minute))
 	// if err != nil {
 	// 	log.Fatalf("could not enqueue task: %v", err)
 	// }
