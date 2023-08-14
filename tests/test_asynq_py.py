@@ -17,7 +17,6 @@ def test_asynq_client_enqueue(redis_conn):
 
         # asynq:{test_queue_name}:t:e6adba7b-018f-4912-9b3f-ad97fe00f00c  hash
         # asynq:{test_queue_name}:pending list
-
         task_info_key = "asynq:{%s}:t:%s" % (msg.queue, msg.id)
         pending_task_key = "asynq:{%s}:pending" % (msg.queue)
 
@@ -29,4 +28,4 @@ def test_asynq_client_enqueue(redis_conn):
         assert task_ids == [msg_id.encode()]
 
     finally:
-        redis_conn.delete(task_info_key, task_ids)
+        redis_conn.delete(task_info_key, pending_task_key)
